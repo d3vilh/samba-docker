@@ -2,7 +2,7 @@
 # VERSION 0.1 by d3vilh@github.com aka Mr. Philipp
 echo "Adding user $USERNAME with uid $UID"
 adduser -S -G samba -u $UID -H -D $USERNAME
-echo "Setting password ($PASSWORD) for user $USERNAME"
+echo "Setting password for user $USERNAME" #($PASSWORD)"
 echo "$PASSWORD" | tee - | smbpasswd -s -c /etc/samba/smb.conf -a $USERNAME
 
 echo "Starting nmbd"
