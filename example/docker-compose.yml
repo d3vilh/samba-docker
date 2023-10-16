@@ -1,14 +1,8 @@
-# samba-docker
-Simple and fast samba share
-
-## Quickstart
-
-```yml
 samba:
   image: d3vilh/samba-docker
 
   volumes:
-    # Samba config file
+    # You must provide a Samba config file
     - ./smb.conf:/etc/samba/smb.conf
 
     # Shares
@@ -28,4 +22,3 @@ samba:
     # Uncomment to override defaults
     # - UID=1000
     # - GID=1000
-```
