@@ -1,19 +1,21 @@
 # samba-docker
-Simple and fast samba share
+Simple but fast samba server which lives in tiny Alpine Linux container.
 
 ## Quickstart
 
 ```yml
 samba:
   image: d3vilh/samba-docker
+  hostname: samba
+  container_name: samba
 
   volumes:
-    # Samba config file
+    # Sharing Samba config file
     - ./smb.conf:/etc/samba/smb.conf
 
     # Shares
     - ~/files:/mnt/files
-    - ~/torrents:/mnt/torrents #:ro
+    - ~/torrents:/mnt/torrents :ro
 
   ports:
     - "137:137/udp"
@@ -24,8 +26,12 @@ samba:
   environment:
     - USERNAME=raspberry
     - PASSWORD=gateway
+    # - UID=1000 # Optional to override default UID = 1000
+    # - GID=1000 # Optional to override default GID = 1000
+```
 
-    # Uncomment to override defaults
-    # - UID=1000
-    # - GID=1000
+## Build own image
+  
+```bash
+./build-image.sh
 ```
