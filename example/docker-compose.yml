@@ -4,15 +4,12 @@ samba:
   container_name: samba
 
   volumes:
-    # You must provide a Samba config file
+    # Sharing Samba config file
     - ./smb.conf:/etc/samba/smb.conf
 
     # Shares
     - ~/files:/mnt/files
-    - ~/torrents:/mnt/torrents #:ro
-
-#  cap_add:
-#    - NET_ADMIN
+    - ~/torrents:/mnt/torrents :ro
 
   ports:
     - "137:137/udp"

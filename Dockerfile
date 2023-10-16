@@ -14,4 +14,5 @@ RUN apk add --no-cache samba-server samba-common-tools openssl bash
 COPY config/smb.conf /etc/samba/smb.conf
 COPY docker-entrypoint.sh /opt/app/docker-entrypoint.sh
 RUN chmod +x /opt/app/docker-entrypoint.sh
+RUN addgroup -g $GID samba > /dev/null 2&>1
 ENTRYPOINT ./docker-entrypoint.sh
