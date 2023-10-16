@@ -12,6 +12,6 @@ ENV GID 1000
 RUN apk add --no-cache samba-server samba-common-tools openssl
 COPY config/smb.conf /etc/samba/smb.conf
 
-RUN nmbd --foreground --no-process-group --log-stdout
+#RUN nmbd --foreground --no-process-group --log-stdout
 
 ENTRYPOINT ["/run.sh"]
