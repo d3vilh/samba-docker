@@ -10,8 +10,8 @@ ENV UID 1000
 ENV GID 1000
 WORKDIR /opt/app
 
-RUN apk add --no-cache samba-server samba-common-tools openssl
+RUN apk add --no-cache samba-server samba-common-tools openssl bash
 COPY config/smb.conf /etc/samba/smb.conf
 COPY docker-entrypoint.sh /opt/app/docker-entrypoint.sh
-
+RUN chmod +x /opt/app/docker-entrypoint.sh
 ENTRYPOINT ./docker-entrypoint.sh
