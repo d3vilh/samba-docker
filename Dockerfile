@@ -8,10 +8,10 @@ ENV USERNAME samba
 ENV PASSWORD bamba
 ENV UID 1000
 ENV GID 1000
+WORKDIR /opt/app
 
 RUN apk add --no-cache samba-server samba-common-tools openssl
 COPY config/smb.conf /etc/samba/smb.conf
+COPY docker-entrypoint.sh /opt/app/docker-entrypoint.sh
 
-#RUN nmbd --foreground --no-process-group --log-stdout
-
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ./docker-entrypoint.sh
