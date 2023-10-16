@@ -7,6 +7,6 @@ echo "setting password ($PASSWORD) for user $USERNAME"
 echo "$PASSWORD" | tee - | smbpasswd -s -c /etc/samba/smb.conf -a $USERNAME
 
 echo "starting nmbd"
-nmbd --foreground --no-process-group --log-stdout
+nmbd --foreground --no-process-group --debug-stdout &
 echo "starting smbd"
-smbd --foreground --no-process-group --log-stdout
+smbd --foreground --no-process-group --debug-stdout
