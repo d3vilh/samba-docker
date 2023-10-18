@@ -9,7 +9,7 @@ Simple but fast samba server which lives in tiny Alpine Linux container.
 
 ```yml
 samba:
-  image: d3vilh/samba-docker
+  image: d3vilh/samba-docker:latest
   hostname: samba
   container_name: samba
 
