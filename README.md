@@ -1,6 +1,10 @@
 # samba-docker
 Simple but fast samba server which lives in tiny Alpine Linux container.
 
+
+[![latest version](https://img.shields.io/github/v/release/d3vilh/samba-docker?color=%2344cc11&label=LATEST%20RELEASE&style=flat-square&logo=Github)](https://github.com/d3vilh/samba-docker/releases/latest) [![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/d3vilh/samba-docker/latest?logo=docker&label=DOCKER%20IMAGE&color=2344cc11&style=flat-square&logoColor=white)](https://hub.docker.com/r/d3vilh/samba-docker) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/d3vilh/samba-docker/latest?logo=Docker&color=2344cc11&label=IMAGE%20SIZE&style=flat-square&logoColor=white)
+
+
 ## Quickstart
 
 ```yml
